@@ -1,0 +1,29 @@
+{
+  "name": "MerdsiE",
+  "version": "1.0.0",
+  "description": "E-commerce using express and handlebars (JS)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattBman23/MerdsiE.git"
+  },
+  "keywords": [],
+  "author": "Matthew Budiman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mattBman23/MerdsiE/issues"
+  },
+  "homepage": "https://github.com/mattBman23/MerdsiE#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.9.12"
+  }
+}
