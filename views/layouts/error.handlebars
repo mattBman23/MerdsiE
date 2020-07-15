@@ -25,11 +25,11 @@
 </head>
 
 <body class="ps-loading">
-    {{> _navbar}}
-    <main class="ps-main">
-        {{{body}}}
-        {{> _footer}}
-    </main>
+    <div class="ps-404 bg--cover">
+        <div class="ps-404__content">
+            {{{body}}}
+        </div>
+    </div>
     <!-- JS Library-->
     <script type="text/javascript" src="plugins/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>

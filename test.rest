@@ -1,0 +1,17 @@
+post http://localhost:5050/users
+content-type: application/json
+
+{
+    "username": "sample",
+    "email": "mattbud2011@hotmail.com",
+    "password":"dPassword"
+}
+
+###
+
+post http://localhost:5050/dTest/add
+content-type: application/json
+
+{  
+    "shoeName":"sample", 
+}

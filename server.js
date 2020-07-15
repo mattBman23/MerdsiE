@@ -1,10 +1,15 @@
+require("dotenv").config();
 const exhbs = require("express-handlebars");
 const express = require("express");
 const path = require("path");
 const app = express();
+const connectDB = require("./config/db");
+
+// connect to database
+connectDB(process.env.DB_CS);
 
 // handlebars middleware
-app.engine("handlebars", exhbs());
+app.engine("handlebars", exhbs({ defaultLayout: "main.handlebars" }));
 app.set("view engine", "handlebars");
 
 // body parser middleware
@@ -22,4 +27,12 @@ app.get("/", (req, res) => {
   });
 });
 
-app.listen(5050, () => console.log("Server started on port 5050"));
+app.use("/dTest", require("./controller/ShoeController"));
+
+app.get("*", (req, res) => {
+  res.status(404).render("errorPage", { layout: "error.handlebars" });
+});
+
+app.listen(process.env.DB_HOST, () =>
+  console.log("Server started on port 5050")
+);
