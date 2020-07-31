@@ -7,8 +7,90 @@
                     <p>982 Upper Changi Rd N, Singapore - Hotline: 6546-6832</p>
                 </div>
                 <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 ">
-                    <div class="header__actions"><a href="#">Login & Regiser</a>
+                    {{#if user}}
+                    <div class="header__actions">
+                        <a class="header__actions" href="#">{{user.email}}</a>
                     </div>
+                    {{else}}
+                    <div class="header__actions">
+                        <a class="header__actions" data-toggle="modal" data-target="#loginModal" href="#">Login
+                            &amp; Regiser</a>
+                    </div>
+                    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <form method="POST" action="/auth/login" class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2 class="modal-title text-center">LOGIN</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label>Email address</label>
+                                        <input name="email" type="email" class="form-control" required=required>
+                                        <small id="emailHelp" class="form-text text-muted">We'll never share your
+                                            email with anyone else.</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <input name="password" type="password" class="form-control" required=required>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="button" class="btn btn-lg btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-lg btn-success">Login</button>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer text-center">
+                                    <p style="text-align: center;font-size:large">
+                                        New to Merdsi? <a data-dismiss="modal" data-toggle="modal"
+                                            data-target="#registerModal"
+                                            style="font-weight: bold;cursor: pointer;">Create an
+                                            account</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <form class="modal-dialog modal-dialog-centered" method="POST" action="/auth/register">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2 class="modal-title text-center">Register</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label>Email address</label>
+                                        <input type="email" name="email" class="form-control" required=required>
+                                        <small id="emailHelp" class="form-text text-muted">We'll never share your
+                                            email with anyone else.</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <input type="password" name="password" class="form-control" required=required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Confirm password</label>
+                                        <input type="password" name="password2" class="form-control" required=required>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="button" class="btn btn-lg btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-lg btn-success">Register</button>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer text-center">
+                                    <p style="text-align: center;font-size:large">
+                                        Already have an account? <a data-dismiss="modal" data-toggle="modal"
+                                            data-target="#loginModal"
+                                            style="font-weight: bold;cursor: pointer;">Login</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    {{/if}}
                 </div>
             </div>
         </div>
@@ -21,14 +103,14 @@
             </div>
             <div class="navigation__column center">
                 <ul class="main-menu menu">
-                    <li class="menu-item menu-item-has-children has-mega-menu"><a href="#">Men</a>
+                    <li class="menu-item menu-item-has-children has-mega-menu"><a href="#">Shoes</a>
                     </li>
-                    <li class="menu-item"><a href="#">Women</a></li>
+                    <li class="menu-item"><a href="#">Auctions</a></li>
                 </ul>
             </div>
             <div class="navigation__column right">
-                <div class="ps-cart"><a class="ps-cart__toggle" href="#"><span><i>20</i></span><i
-                            class="ps-icon-shopping-cart"></i></a>
+                <div style="float:right;" class="ps-cart">
+                    <a class="ps-cart__toggle" href="#"><span><i>20</i></span><i class="ps-icon-shopping-cart"></i></a>
                     <div class="ps-cart__listing">
                         <div class="ps-cart__content">
                             <div class="ps-cart-item"><a class="ps-cart-item__close" href="#"></a>

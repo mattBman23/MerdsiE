@@ -14,22 +14,22 @@
                             <div class="ps-shoe mb-30">
                                 <div class="ps-shoe__thumbnail">
                                     <a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img
-                                        src="/images/shoe/1.jpg" alt=""><a class="ps-shoe__overlay"
+                                        src="/images/shoes/{{shoeImg}}" alt=""><a class="ps-shoe__overlay"
                                         href="product-detail.html"></a>
                                 </div>
                                 <div class="ps-shoe__content">
                                     <div class="ps-shoe__variants">
-                                        <div class="ps-shoe__variant normal"><img src="/images/shoes/1a.jpg" alt=""><img
-                                                src="/images/shoe/3.jpg" alt=""><img src="/images/shoe/4.jpg"
-                                                alt=""><img src="/images/shoe/5.jpg" alt="">
+                                        <div class="ps-shoe__variant normal">
+                                            {{#each shoeSubImg}}
+                                            <img src="/images/shoes/{{subImgPath}}" alt="">
+                                            {{/each}}
                                         </div>
 
                                     </div>
-                                    <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Air Jordan 7
-                                            Retro</a>
-                                        <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#">
-                                                Nike</a>,<a href="#"> Jordan</a></p><span class="ps-shoe__price">
-                                            $120</span>
+                                    <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">{{shoeName}}</a>
+                                        <p class="ps-shoe__categories"><a style="cursor:default;">{{shoeBrand}}</a></p>
+                                        <span class="ps-shoe__price">
+                                            ${{shoeCost}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -67,25 +67,28 @@
                 data-owl-item-sm="2" data-owl-item-md="3" data-owl-item-lg="4" data-owl-duration="1000"
                 data-owl-mousedrag="on">
                 {{#each dTemplate}}
-                <div class="ps-shoes--carousel">
-                    <div class="ps-shoe">
-                        <div class="ps-shoe__thumbnail">
-                            <a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img
-                                src="/images/shoe/1.jpg" alt=""><a class="ps-shoe__overlay"
-                                href="product-detail.html"></a>
-                        </div>
-                        <div class="ps-shoe__content">
-                            <div class="ps-shoe__variants">
-                                <div class="ps-shoe__variant normal"><img src="/images/shoe/1.jpg" alt=""><img
-                                        src="/images/shoe/3.jpg" alt=""><img src="/images/shoe/4.jpg" alt=""><img
-                                        src="/images/shoe/5.jpg" alt=""></div>
-
+                <div class="grid-item">
+                    <div class="grid-item__content-wrapper">
+                        <div class="ps-shoe mb-30">
+                            <div class="ps-shoe__thumbnail">
+                                <a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img
+                                    src="/images/shoes/{{shoeImg}}" alt=""><a class="ps-shoe__overlay"
+                                    href="product-detail.html"></a>
                             </div>
-                            <div class="ps-shoe__detail"><a class="ps-shoe__name" href="product-detai.html">Air
-                                    Jordan 7 Retro</a>
-                                <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#">
-                                        Nike</a>,<a href="#"> Jordan</a></p><span class="ps-shoe__price"> £
-                                    120</span>
+                            <div class="ps-shoe__content">
+                                <div class="ps-shoe__variants">
+                                    <div class="ps-shoe__variant normal">
+                                        {{#each shoeSubImg}}
+                                        <img src="/images/shoes/{{subImgPath}}" alt="">
+                                        {{/each}}
+                                    </div>
+
+                                </div>
+                                <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">{{shoeName}}</a>
+                                    <p class="ps-shoe__categories"><a style="cursor:default;">{{shoeBrand}}</a></p>
+                                    <span class="ps-shoe__price">
+                                        ${{shoeCost}}</span>
+                                </div>
                             </div>
                         </div>
                     </div>

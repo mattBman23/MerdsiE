@@ -26,7 +26,8 @@ router.post(
       shoeBrand,
       shoeAva,
       shoeCost,
-      shoeGender,
+      shoeImg,
+      shoeSubImg,
     } = req.body;
 
     try {
@@ -44,7 +45,8 @@ router.post(
         shoeBrand,
         shoeAva,
         shoeCost,
-        shoeGender,
+        shoeImg,
+        shoeSubImg,
       });
 
       await dShoe.save();

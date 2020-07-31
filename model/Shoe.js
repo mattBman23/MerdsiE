@@ -8,19 +8,15 @@ const ShoeSchema = new mongoose.Schema({
   shoeBrand: {
     type: String,
     required: true,
-    default: "Vans",
+    default: "Nike",
   },
   shoeDesc: {
     type: String,
     required: true,
   },
-  shoeGender: {
-    type: String,
-    required: true,
-    default: "Male",
-  },
   shoeImg: {
     type: String,
+    default: "dImg",
   },
   shoeSubImg: [
     {
