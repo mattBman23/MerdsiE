@@ -13,9 +13,8 @@
                         <div class="grid-item__content-wrapper">
                             <div class="ps-shoe mb-30">
                                 <div class="ps-shoe__thumbnail">
-                                    <a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img
-                                        src="/images/shoes/{{shoeImg}}" alt=""><a class="ps-shoe__overlay"
-                                        href="product-detail.html"></a>
+                                    <img src="/images/shoes/{{shoeImg}}" alt=""><a class="ps-shoe__overlay"
+                                        href="/shoes/{{id}}"></a>
                                 </div>
                                 <div class="ps-shoe__content">
                                     <div class="ps-shoe__variants">
@@ -71,15 +70,14 @@
                     <div class="grid-item__content-wrapper">
                         <div class="ps-shoe mb-30">
                             <div class="ps-shoe__thumbnail">
-                                <a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img
-                                    src="/images/shoes/{{shoeImg}}" alt=""><a class="ps-shoe__overlay"
-                                    href="product-detail.html"></a>
+                                <img src="/images/shoes/{{shoeImg}}" alt=""><a class="ps-shoe__overlay"
+                                    href="/shoes/{{id}}"></a>
                             </div>
                             <div class="ps-shoe__content">
                                 <div class="ps-shoe__variants">
                                     <div class="ps-shoe__variant normal">
                                         {{#each shoeSubImg}}
-                                        <img src="/images/shoes/{{subImgPath}}" alt="">
+                                        <img src="/images/shoes/{{subImgPath}}">
                                         {{/each}}
                                     </div>
 

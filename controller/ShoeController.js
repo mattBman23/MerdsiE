@@ -4,6 +4,44 @@ const { check, validationResult } = require("express-validator");
 
 const Shoe = require("../model/Shoe");
 
+// get all shoes
+router.get("/", async (req, res) => {
+  try {
+    const shoes = await Shoe.find();
+    res.render("shoes", {
+      shoes,
+    });
+  } catch (err) {
+    console.log("ERROR");
+  }
+});
+
+// view cart
+router.get("/cart", async (req, res) => {
+  const dTemplate = await Shoe.find();
+  let totalAmt = global.dCart
+    .map((x) => x.shoeCost)
+    .reduce((acc, cur) => acc + cur);
+  res.render("cart", { dTemplate, totalAmt });
+});
+
+// get shoe by id
+router.get("/:id", async (req, res) => {
+  try {
+    const shoeItem = await Shoe.findOne({ _id: req.params.id });
+    res.render("shoe", { shoeItem });
+  } catch (err) {
+    console.log("ERROR");
+  }
+});
+
+// add to cart
+router.post("/addCart/:id", async (req, res) => {
+  const shoeItem = await Shoe.findOne({ _id: req.params.id });
+  global.dCart.push(shoeItem);
+  res.redirect("/shoes");
+});
+
 // post shoe
 router.post(
   "/add",
@@ -58,11 +96,5 @@ router.post(
     }
   }
 );
-
-// auction item
-
-// delete item
-
-//
 
 module.exports = router;

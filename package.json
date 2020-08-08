@@ -29,6 +29,7 @@
     "express-validator": "^6.5.0",
     "gravatar": "^1.8.0",
     "handlebars": "^4.7.6",
+    "handlebars-helpers": "^0.10.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.12",
     "passport": "^0.4.1",

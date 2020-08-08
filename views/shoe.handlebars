@@ -1,0 +1,102 @@
+<div class="test">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ps-product--detail pt-60">
+    <div class="ps-container">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 col-lg-offset-1">
+                <div class="ps-product__thumbnail">
+                    <div class="ps-product__preview">
+                        <div class="ps-product__variants">
+                            {{#each shoeItem.shoeSubImg}}
+                            <div class="item"><img src="/images/shoes/{{subImgPath}}"></div>
+                            {{/each}}
+                        </div>
+                    </div>
+                    <div class="ps-product__image">
+                        {{#each shoeItem.shoeSubImg}}
+                        <div class="item">
+                            <img class="zoom" src="/images/shoes/{{subImgPath}}">
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="ps-product__thumbnail--mobile">
+                    <div class="ps-product__main-img"><img src="images/shoe-detail/1.jpg" alt=""></div>
+                    <div class="ps-product__preview owl-slider" data-owl-auto="true" data-owl-loop="true"
+                        data-owl-speed="5000" data-owl-gap="20" data-owl-nav="true" data-owl-dots="false"
+                        data-owl-item="3" data-owl-item-xs="3" data-owl-item-sm="3" data-owl-item-md="3"
+                        data-owl-item-lg="3" data-owl-duration="1000" data-owl-mousedrag="on"></div>
+                </div>
+                <div class="ps-product__info">
+                    <h1>{{shoeItem.shoeName}}</h1>
+                    <p class="ps-product__category"><a style="cursor:default;">{{shoeItem.shoeBrand}}</a></p>
+                    <h3 class="ps-product__price">${{shoeItem.shoeCost}}</h3>
+                    <div class="ps-product__block ps-product__quickview">
+                        <h4>QUICK REVIEW</h4>
+                        <p>The Nike Free RN 2017 Men's Running Sky weighs less than previous versions and features an
+                            updated knit material…</p>
+                    </div>
+                    <form action="/shoes/addCart/{{shoeItem.id}}" method="POST">
+                        <div class="ps-product__shopping">
+                            <input type="submit" class="ps-btn mb-10" value="Add to cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="clearfix"></div>
+                <div class="ps-product__content mt-50">
+                    <ul class="tab-list" role="tablist">
+                        <li class="active"><a href="#tab_01" aria-controls="tab_01" role="tab"
+                                data-toggle="tab">Overview</a></li>
+                        <li><a href="#tab_02" aria-controls="tab_02" role="tab" data-toggle="tab">Review</a></li>
+                    </ul>
+                </div>
+                <div class="tab-content mb-60">
+                    <div class="tab-pane active" role="tabpanel" id="tab_01">
+                        <p>Caramels tootsie roll carrot cake sugar plum. Sweet roll jelly bear claw liquorice.
+                            Gingerbread lollipop dragée cake. Pie topping jelly-o. Fruitcake dragée candy canes tootsie
+                            roll. Pastry jelly-o cupcake. Bonbon brownie soufflé muffin.</p>
+                        <p>Sweet roll soufflé oat cake apple pie croissant. Pie gummi bears jujubes cake lemon drops
+                            gummi bears croissant macaroon pie. Fruitcake tootsie roll chocolate cake Carrot cake cake
+                            bear claw jujubes topping cake apple pie. Jujubes gummi bears soufflé candy canes topping
+                            gummi bears cake soufflé cake. Cotton candy soufflé sugar plum pastry sweet roll..</p>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="tab_02">
+                        <p class="mb-20">1 review for <strong>{{shoeItem.shoeName}}</strong></p>
+                        <div class="ps-review">
+                            <div class="ps-review__content">
+                                <header>
+                                    <p>By<a href=""> Alena Studio</a> - November 25, 2017</p>
+                                </header>
+                                <p>Soufflé danish gummi bears tart. Pie wafer icing. Gummies jelly beans powder.
+                                    Chocolate bar pudding macaroon candy canes chocolate apple pie chocolate cake. Sweet
+                                    caramels sesame snaps halvah bear claw wafer. Sweet roll soufflé muffin topping
+                                    muffin brownie. Tart bear claw cake tiramisu chocolate bar gummies dragée lemon
+                                    drops brownie.</p>
+                            </div>
+                        </div>
+                        <form class="ps-product__review" action="_action" method="post">
+                            <h4>ADD YOUR REVIEW</h4>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                                    <div class="form-group">
+                                        <label>Your Review:</label>
+                                        <textarea class="form-control" rows="6"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="ps-btn ps-btn--sm">Submit<i class="ps-icon-next"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

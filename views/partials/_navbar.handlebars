@@ -103,47 +103,43 @@
             </div>
             <div class="navigation__column center">
                 <ul class="main-menu menu">
-                    <li class="menu-item menu-item-has-children has-mega-menu"><a href="#">Shoes</a>
+                    <li class="menu-item menu-item-has-children has-mega-menu"><a href="/shoes">Shoes</a>
                     </li>
                     <li class="menu-item"><a href="#">Auctions</a></li>
+                    <li class="menu-item"><a href="#"></a></li>
                 </ul>
             </div>
             <div class="navigation__column right">
                 <div style="float:right;" class="ps-cart">
-                    <a class="ps-cart__toggle" href="#"><span><i>20</i></span><i class="ps-icon-shopping-cart"></i></a>
+                    <a class="ps-cart__toggle" href="#"><span><i>{{ dCart.length }}</i></span><i
+                            class="ps-icon-shopping-cart"></i></a>
                     <div class="ps-cart__listing">
+
+                        {{#if dCart.length }}
+                        {{#each dCart }}
                         <div class="ps-cart__content">
-                            <div class="ps-cart-item"><a class="ps-cart-item__close" href="#"></a>
-                                <div class="ps-cart-item__thumbnail"><a href="product-detail.html"></a><img
-                                        src="/images/cart-preview/1.jpg" alt=""></div>
-                                <div class="ps-cart-item__content"><a class="ps-cart-item__title"
-                                        href="product-detail.html">Amazin’ Glazin’</a>
-                                    <p><span>Quantity:<i>12</i></span><span>Total:<i>£176</i></span></p>
-                                </div>
-                            </div>
-                            <div class="ps-cart-item"><a class="ps-cart-item__close" href="#"></a>
-                                <div class="ps-cart-item__thumbnail"><a href="product-detail.html"></a><img
-                                        src="/images/cart-preview/1.jpg" alt=""></div>
-                                <div class="ps-cart-item__content"><a class="ps-cart-item__title"
-                                        href="product-detail.html">The Crusty Croissant</a>
-                                    <p><span>Quantity:<i>12</i></span><span>Total:<i>£176</i></span></p>
-                                </div>
-                            </div>
-                            <div class="ps-cart-item"><a class="ps-cart-item__close" href="#"></a>
-                                <div class="ps-cart-item__thumbnail"><a href="product-detail.html"></a><img
-                                        src="/images/cart-preview/3.jpg" alt=""></div>
-                                <div class="ps-cart-item__content"><a class="ps-cart-item__title"
-                                        href="product-detail.html">The Rolling Pin</a>
-                                    <p><span>Quantity:<i>12</i></span><span>Total:<i>£176</i></span></p>
+                            <div class="ps-cart-item">
+                                <div class="ps-cart-item__thumbnail"><a href="/shoes/{{id}}"></a><img
+                                        src="/images/shoes/{{shoeImg}}"></div>
+                                <div class="ps-cart-item__content"><a class="ps-cart-item__title" href="/shoes/{{id}}">
+                                        {{shoeName}}
+                                    </a>
+                                    <p><span>Total:<i>${{shoeCost}} </i></span></p>
                                 </div>
                             </div>
                         </div>
+                        {{/each}}
                         <div class="ps-cart__total">
-                            <p>Number of items:<span>36</span></p>
-                            <p>Item Total:<span>£528.00</span></p>
+                            <p>Number of items:<span>{{ dCart.length }}</span></p>
                         </div>
-                        <div class="ps-cart__footer"><a class="ps-btn" href="cart.html">Check out<i
-                                    class="ps-icon-arrow-left"></i></a></div>
+                        <div class="ps-cart__footer"><a class="ps-btn" href="/shoes/cart">
+                                Check out
+                                <i class="ps-icon-arrow-left"></i></a></div>
+                        {{else}}
+                        <div class="ps-cart__content text-center">
+                            Cart is empty
+                        </div>
+                        {{/if}}
                     </div>
                 </div>
                 <div class="menu-toggle"><span></span></div>

@@ -27,6 +27,10 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  userstatus: {
+    type: String,
+    default: "user",
+  },
 });
 
 mongoose.model("users", UserSchema);

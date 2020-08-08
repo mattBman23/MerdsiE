@@ -1,0 +1,30 @@
+<div class="ps-products-wrap pt-50">
+    <div class="ps-products" data-mh="product-listing">
+        <div class="ps-product__columns">
+            {{#each shoes}}
+            <div class="ps-product__column">
+                <div class="ps-shoe mb-30">
+                    <div class="ps-shoe__thumbnail">
+                        <img src="/images/shoes/{{shoeImg}}"><a class="ps-shoe__overlay" href="/shoes/{{id}}"></a>
+                    </div>
+                    <div class="ps-shoe__content">
+                        <div class="ps-shoe__variants">
+                            <div class="ps-shoe__variant normal">
+                                {{#each shoeSubImg}}
+                                <img src="/images/shoes/{{subImgPath}}" alt="">
+                                {{/each}}
+                            </div>
+                        </div>
+                        <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">{{shoeName}}</a>
+                            <p class="ps-shoe__categories"><a style="cursor:default;">{{shoeBrand}}</a></p><span
+                                class="ps-shoe__price">
+                                ${{shoeCost}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

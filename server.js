@@ -1,7 +1,8 @@
+const hHelper = require("handlebars-helpers")();
 const exhbs = require("express-handlebars");
 const session = require("express-session");
-const _handlebars = require("handlebars");
 const connectDB = require("./config/db");
+const handlebars = require("handlebars");
 const flash = require("connect-flash");
 const passport = require("passport");
 const express = require("express");
@@ -25,7 +26,8 @@ app.engine(
   "handlebars",
   exhbs({
     defaultLayout: "main.handlebars",
-    handlebars: allowInsecurePrototypeAccess(_handlebars),
+    handlebars: allowInsecurePrototypeAccess(handlebars),
+    helpers: hHelper,
   })
 );
 app.set("view engine", "handlebars");
@@ -52,10 +54,12 @@ app.use(flash());
 app.use(express.static(path.join(__dirname, "public")));
 
 // global variables
+global.dCart = [];
 app.use((req, res, next) => {
   res.locals.success_msg = req.flash("success_msg");
   res.locals.error_msg = req.flash("error_msg");
   res.locals.user = req.user || null;
+  res.locals.dCart = global.dCart;
   next();
 });
 
@@ -72,6 +76,7 @@ app.get("/", async (req, res) => {
 
 app.use("/auth", require("./controller/AuthController"));
 app.use("/user", require("./controller/UserController"));
+app.use("/shoes", require("./controller/ShoeController"));
 
 app.get("*", (req, res) => {
   res.status(404).render("errorPage", { layout: "error.handlebars" });
