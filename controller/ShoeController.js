@@ -1,3 +1,4 @@
+const { ensureAuthenticated } = require("../helpers/auth");
 const express = require("express");
 const router = express.Router();
 const { check, validationResult } = require("express-validator");
@@ -14,6 +15,10 @@ router.get("/", async (req, res) => {
   } catch (err) {
     console.log("ERROR");
   }
+});
+
+router.get("/checkout", ensureAuthenticated, (req, res) => {
+  res.render("checkout");
 });
 
 // view cart
@@ -39,7 +44,7 @@ router.get("/:id", async (req, res) => {
 router.post("/addCart/:id", async (req, res) => {
   const shoeItem = await Shoe.findOne({ _id: req.params.id });
   global.dCart.push(shoeItem);
-  res.redirect("/shoes");
+  res.redirect("/");
 });
 
 // post shoe

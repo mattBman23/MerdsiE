@@ -5,10 +5,4 @@ router.get("/", (req, res) => {
   res.render("login");
 });
 
-// register
-
-// login
-
-// logout
-
 module.exports = router;

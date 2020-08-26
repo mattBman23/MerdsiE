@@ -1,0 +1,83 @@
+<div class="ps-checkout pt-80 pb-80">
+    <div class="ps-container">
+        <form class="ps-checkout__form" action="do_action" method="post">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ">
+                    <div class="ps-checkout__billing">
+                        <h3>Billing Detail</h3>
+                        <div class="form-group form-group--inline">
+                            <label>First Name<span>*</span>
+                            </label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="form-group form-group--inline">
+                            <label>Last Name<span>*</span>
+                            </label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="form-group form-group--inline">
+                            <label>Phone<span>*</span>
+                            </label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="form-group form-group--inline">
+                            <label>Address<span>*</span>
+                            </label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+                    <div class="ps-checkout__order">
+                        <header>
+                            <h3>Your Order</h3>
+                        </header>
+                        <div class="content">
+                            <table class="table ps-checkout__products">
+                                <thead>
+                                    <tr>
+                                        <th class="text-uppercase">Product</th>
+                                        <th class="text-uppercase">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>HABITANT x1</td>
+                                        <td>$300.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Card Subtitle</td>
+                                        <td>$300.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Order Total</td>
+                                        <td>$300.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <footer>
+                            <h3>Payment Method</h3>
+                            <div class="form-group cheque">
+                                <div class="ps-radio">
+                                    <input class="form-control" type="radio" id="rdo01" name="payment" checked>
+                                    <label for="rdo01">Cheque Payment</label>
+                                    <p>Please send your cheque to Store Name, Store Street, Store Town, Store State /
+                                        County, Store Postcode.</p>
+                                </div>
+                            </div>
+                            <div class="form-group paypal">
+                                <div class="ps-radio ps-radio--inline">
+                                    <input class="form-control" type="radio" name="payment" id="rdo02">
+                                    <label for="rdo02">Credit/Debit Card</label>
+                                </div>
+                                <button class="ps-btn ps-btn--fullwidth">Place Order<i
+                                        class="ps-icon-next"></i></button>
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
